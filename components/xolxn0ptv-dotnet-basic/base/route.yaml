@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: xolxn0ptv-dotnet-basic
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: xolxn0ptv-dotnet-basic 
+  name: xolxn0ptv-dotnet-basic
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: xolxn0ptv-dotnet-basic
+    weight: 100 
